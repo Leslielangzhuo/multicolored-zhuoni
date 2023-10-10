@@ -1,0 +1,356 @@
++<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>藏王故里，洮砚之乡</title>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.js"></script>
+
+<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体;  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+
+		/* 本例子css */
+		.picMarquee-left{
+	width: auto;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #ccc;
+	height: 220px;
+	background-color: #FFF;
+}
+		.picMarquee-left .hd{
+	overflow: hidden;
+	height: 0px;
+	background: #f4f4f4;
+	padding-top: 0;
+	padding-right: 10px;
+	padding-bottom: 0;
+	padding-left: 10px;
+	width: 0px;
+}
+		.picMarquee-left .hd .prev,.picMarquee-left .hd .next{
+	display: block;
+	width: 0px;
+	height: 0px;
+	float: right;
+	margin-right: 5px;
+	margin-top: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	background: url("/images/arrow.png") no-repeat;
+}
+		.picMarquee-left .hd .next{ background-position:0 -50px;  }
+		.picMarquee-left .hd .prevStop{ background-position:-60px 0; }
+		.picMarquee-left .hd .nextStop{ background-position:-60px -50px; }
+		.picMarquee-left .bd{
+	padding: 0px;
+}
+		.picMarquee-left .bd ul{
+	overflow: hidden;
+	zoom: 1;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+		.picMarquee-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+		.picMarquee-left .bd ul li .pic{
+	text-align: center;
+	height: auto;
+	width: auto;
+	padding: 10px;
+}
+		.picMarquee-left .bd ul li .pic img{
+	width: 250px;
+	height: 200px;
+	display: block;
+	padding: 2px;
+	border: 1px solid #ccc;
+}
+		.picMarquee-left .bd ul li .pic a:hover img{ border-color:#999;  }
+		.picMarquee-left .bd ul li .title{
+	line-height: 24px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 本例子css */
+	.fullSlide{
+	min-width: 1000px;
+	position: relative;
+	height: 450px;
+	overflow: hidden;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #FFFFFF;
+}
+	.fullSlide .bd{ position:relative; z-index:0;  }
+	.fullSlide .bd ul{
+	width: 100% !important;
+	overflow: hidden;
+}
+	.fullSlide .bd li{
+	width: 100% !important;
+	height: 450px;
+}
+	.fullSlide .bd li .siteWidth{ width:1000px; position:relative;  margin:0 auto;  height:450px;  }
+	.fullSlide .bd li a{ position:absolute; width:100%; height:450px; display:block; z-index:1;;   }
+	.fullSlide .bd .txt{ position:absolute; width:415px; top:100px; left:15px;   font:normal 18px/30px "Microsoft YaHei";    }
+	.fullSlide .bd .btn{ display:block; zoom:1; margin-top:8px;  width:72px; padding-right:10px;  height:31px; line-height:31px; text-align:center; color:#fff; font-size:12px; background:url(images/banner-btn.png) 0 0 no-repeat;
+	_background:url(images/banner-btn-ie6.png) 0 0 no-repeat;
+	}
+
+	.fullSlide .hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px; text-align:center; }
+	.fullSlide .hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:11px; height:11px; margin:4px; background:url(images/dot-black.png) 0 0; overflow:hidden; 
+		line-height:9999px; filter:alpha(opacity=40);opacity:0.4; 
+	}
+	.fullSlide .hd ul .on{ filter:alpha(opacity=100);opacity:1;  }
+</style>
+</head>
+<body>
+<!--头部-->
+<header>
+<div class="toubu"><img src="images/1.gif" width="1200" height="200"></div>
+</header>
+<!--导航-->
+<nav>
+<div class="daohang">
+  <ul>
+    <li><a href="index.html" class="dh">首页</a> </li>
+    <li><a href="zwjs.html" class="dh">藏王介绍</a> </li> 
+    <li><a href="znjs.html" class="dh">卓尼介绍</a> </li>
+    <li><a href="lyjd.html" class="dh">旅游景点</a> </li>
+    <li><a href="tc.html" class="dh">特产</a></li>
+    <li><a href="fwzwhyc.html" class="dh"> 非物质文化遗产</a> </li>
+    <li><a href="znxmswh.html" class="dh">卓尼县民俗文化</a></li>
+    <li><a href="znf.html" class="dh">卓尼赋</a></li>
+    <li><a href="tyf.html" class="dh">洮砚赋</a></li>
+  </ul>
+</div>
+</nav>
+
+<!--幻灯片开始-->
+<div class=" clearboth"></div>
+<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<li style="background:url(images/65.jpg) #c8cbf8 center 0 no-repeat;">	
+                  </li>
+				<li style="background:url(images/68.jpg) #BCE0FF center 0 no-repeat;">
+                </li>
+				<li style="background:url(images/t017781bb5de1efb276.jpg) #e3fff3 center 0 no-repeat;">
+			    </li>
+              </ul>
+			<p>&nbsp;</p>
+			<ul>
+			  <li style="background:url(images/69.jpg) #BCE0FF center 0 no-repeat;">
+			    </li>
+		  </ul>
+		</div>
+
+  <div class="hd"><ul></ul></div>
+</div>
+
+	<script type="text/javascript">
+		jQuery(".fullSlide").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"topLoop",  autoPlay:true, autoPage:true, trigger:"click" });
+	</script>
+    <div class=" clearboth"></div>
+<!--幻灯片结束-->
+<section>
+<!--视频-->
+<div class=" clearboth"></div>
+<aside class="kcsp">
+<video width="460" height="258" controls poster="images/14.jpg" >
+	<source src="images/1.mp4" type="video/mp4">
+    <source src="images/1.ogg" type="video/ogg">
+  <source src="images/kcsp.webm" type="video/webm">
+  您的浏览器不支持video标签。
+</video>
+</aside>
+</section>
+<img src="images/13.jpg" width="742" height="251">
+<div class="qcfd"></div>
+<!--主体1-->
+<section>
+<!--左侧-->
+<div class="left">
+<div class="bt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="zwjs.html" class="bt">藏王介绍</a></div>
+<div class="js">藏王策墨林简介</div>
+<div class="zw">
+<p>策墨林活佛清朝封为诺门罕，是清朝西藏有摄政资格的四大林活佛之一；中华民国初期，被达赖封为呼图克图；中华人民共和国时期称策墨林活佛。是藏传佛教格鲁派的活佛系统，驻锡于拉萨策墨林（崇寿寺）。</p>
+<p>—世策墨林活佛为阿旺楚臣，1721年出生在甘南卓尼洮砚乡，自幼在闫家寺出家为僧，后来入藏学习佛经，先入色拉寺，后入上密院学习密宗。阿旺楚臣由此而入北京雍和宫，渐升为达喇嘛、堪布，受乾隆帝赏识。
+1786 年，章爵.若必多吉固寂于五台山，乾隆帝命阿旺楚臣回北京接管章嘉•若必多吉的拉萨克达喇嘛印务，到雍和宫代行章嘉•若必多吉职责。乾隨帝于1790年8月派阿旺楚臣再次赴西藏任摄政。
+阿旺楚臣入藏后半年左右，于 1791年逝世于拉萨。圆寂后其家族将骨灰迎回故乡安葬，遂有藏王坟之称。 藏王坟原遗址面积4800平方米，坟区原有藏王寺大殿两座。藏王坟内均埋火葬后的骨灰盒，成为藏族群众和佛教信徒虔诚膜拜之胜地。
+现己搬迁至下达勿村白杨沟内。</p>
+<img src="images/4.jpeg" width="378" height="389"> </div>
+</div>
+<!--中间-->
+<div class="zhong">
+<div class="bt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="znjs.html" class="bt">卓尼介绍</a></div>
+<div class="zw">
+<p>卓尼县，隶属于甘肃省甘南藏族自治州，位于青藏高原的东部边缘，甘肃省甘南藏族自治州东南部，全县总面积5419.68平方公里。
+卓尼县属高原性大陆气候，县辖11个镇、4个乡，另辖3个乡级单位，县政府驻柳林镇。截至2018年末，卓尼县户籍总人口11.07万人。</p>
+<p>夏、商、周时期，卓尼属雍州之域。1958年12月31日，卓尼与临潭合并，撤销卓尼县建置，称临潭县，治所设旧城。1961年12月25日，国务院决定恢复卓尼县建置。卓尼县境内有306省道穿境。
+2017年12月，卓尼县入选第五批全国民族团结进步创建示范区。2018年9月25日，获得商务部“2018年电子商务进农村综合示范县”荣誉称号。2019年4月28日，经甘肃省政府批准正式退出贫困县。境内有大峪沟、禅定寺等旅游景区。</p>
+<img src="images/13.jpg" width="380" height="502"> 
+</div>
+
+</div>
+<!--右侧-->
+<div class="right">
+<div class="bt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="lyjd.html" class="bt">旅游景点</a></div>
+<div class="lyjdkk">
+<img src="images/2.jpg" width="200" height="240">
+<div class="dyg">
+ <div class="dygzt"><a href="lyjd-dyg.html" charset="dygzt">大峪沟景区</a></div>
+  <p>卓尼大峪沟位于甘肃省甘南藏族自治州卓尼县木耳镇，这里洮河碧波荡漾，林带苍翠茂密，山峰挺拔峻秀，风光瑰丽奇特，而且动植物资源也十分丰富，是一处国家4A级生态旅游景区。</p>
+</div>
+<div class="qcfd"></div>
+<div class="gl"></div>
+<img src="images/3gif.gif" width="200" height="240">
+<div class="dyg">
+  <div class="dygzt"><a href="lyjd-ytsjng.html"charset="dygzt">杨土司革命纪念馆</a></div>
+  <p>卓尼县隶属于甘南藏族自治州，位于甘肃省南部，青藏高原东部。</p>
+  <p>2012年7月，卓尼县在杨土司故居原址进行布展，8月底布展0完成。2013年正式成立卓尼县杨土司革命纪念馆。</p>
+</div>
+<div class="qcfd"></div>
+<div class="gl"></div>
+<img src="images/55d941590c00d.jpg" width="200" height="375">
+<div class="dygg">
+  <div class="cds"><a href="lyjd-cds.html">禅定寺</a></div>
+  <p>禅定寺位于甘肃省甘南藏族自治州卓尼县城北平台上。又称卓尼寺，藏语称噶丹雪珠林(具喜请修洲)、当增达尔吉林(禅定兴旺洲)。</p> 
+  <p>相传13世纪初，这里建有一座宁玛派小寺康熙帝封他为崇梵净觉禅师，敕赐禅定寺匾额。从此，卓尼寺又称禅定寺。</p>
+</div>
+</div>
+</div>
+</section>
+<!--主体2-->
+<div class="qcfd"></div>
+<div class="glkk"></div>
+<section>
+<!--左侧-->
+<div class="left">
+<div class="bt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="tc.html" class="bt">特产</a></div>
+<img src="images/9.jpg" width="382" height="371">
+<div class="tcbtkk">
+<div class="tcbt"><a href="tc-ty.html" charset="dygzt">洮砚</a></div>
+<p>洮砚在宋朝时已闻名全国，至今已有九百多年开采历史。相传，宋初即有人从临潭、临洮附近的洮河河底采石制砚。后来，因洮河泛滥，河流改道，可采石的地方找不到了。
+南宋赵希鹄《古砚辨》中写道：“除端歙二石外，唯洮河绿石北方最为贵重，绿如兰、润如玉、发墨不减端溪下岩，然石在临洮大河深水之底，非人力所致，得之为无价之宝，耆旧相传，虽知有洮砚，然目所未睹。</p>
+</div>
+<div class="tp"><img src="images/3.jpg" width="172" height="316"></div>
+<div class="thykk">
+<div class="tyybt"><a href="tc-thy.html" charset="dygzt">洮河鱼</a></div>
+<p>洮河是条无污染的河流。纵贯卓尼115公里，沿岸有大小鱼池众多，养鱼水面120多亩，洮河鱼类繁多，品种多样，以金片鱼、双唇嘴鱼最为驰名。
+洮河鱼膘肥肉鲜，刺少质嫩，富含蛋白质，烹为菜肴，趁热上桌，滋味腴美，鲜香滑嫩，上口柔糯，余味浓香，风味独特。洮河鱼除了池养之外，还可在洮河中垂钓或网捕，犹以冬季砸冰网捕为主要捕捞方法。</p>
+</div>
+</div>
+<!--中间-->
+<div class="zhong">
+<div class="bt">&nbsp;&nbsp;&nbsp; <a href="fwzwhyc.html" class="bt">非物质文化遗产</a></div>
+<div class="fwzwhyckk">
+<div class="fwzwhycbt"><a href="fwzwhyc-blgw.html" charset="dygzt">非物质文化遗产----巴郎鼓舞</a></div>
+<p>巴郎鼓舞，是甘肃省非物质文化遗产，藏语称莎姆舞莎目舞沙目舞，藏语意为在广场上表演的一种祈祷平安的舞蹈，是流行于甘肃省卓尼县藏巴哇镇和洮砚镇境内的一种古典锅庄舞，
+因其使用的击打方式颇似货郎用的拨郎鼓（藏语称莎姆“沙目”），故汉语称巴郎鼓舞。</p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</div>
+<img src="images/5.jpg" width="380" height="338"> 
+<div class="fwzwhyckkk">
+<div class="fwzwhycbt"><a href="fwzwhyc-sgm.html" charset="dygzt">非物质文化遗产----三格毛服饰</a></div>
+<p>“觉乃”藏族是一支来自西藏的藏民族，世代生息繁衍在卓尼这块富饶美丽的地方，其生活习俗丰富多彩，服饰更具迷人魅力。在服饰文化日益现代化、多样化的今天，
+“觉乃”藏族妇女服饰还保留着吐蕃时代的西藏农区藏族服饰的特点，可以说是全藏区保留完整的古代服饰及礼仪的“活化石”。这种服饰文化在中国甚至全世界都是独一无二的，具有很强的观赏和研究价值。2010年，被列入省级第三批非物质文化遗产名录。</p>
+</div>
+<img src="images/6.jpg" width="380" height="178"> </div>
+<!--右侧-->
+<div class="right">
+<div class="bt">&nbsp;&nbsp;&nbsp; <a href="znxmswh.html" class="bt">卓尼县民俗文化</a></div>
+<div class="mswhkk">
+<div class="mswhbt"><a href="znxmswh-xlj.html" charset="dygzt">香浪节介绍</a></div>
+<p>香浪节:藏族人民在农闲时的一种郊游形式。它无固定时间和期限，短则一周，长则月余，都因地因时因人而异。
+一般在农历六七月间草原水草茂盛、鲜花盛开、牛羊肥壮的时节举办。扎起帐篷，搭灶野炊，欢度数日。说笑弹唱，载歌载舞，在大自然的怀抱中纵情追逐草原生活应有的欢愉。
+节日期间，要举行赛马、赛牦牛、赛跑、拔河、摔跤等藏族传统体育活动。届时，满山坡扎满了帐篷，人头攒动，炊烟升起，到处呈现出一派浓郁的藏乡氛围。</p>
+</div>
+<div class="mswhkk">
+<div class="mswhbt"><a href="znxmswh-nsh.html" charset="dygzt">闹社火介绍</a></div>
+<p>每逢春节，从旧年腊月开始，到新年的元宵节期间，卓尼城乡都要排练和表演由当地民众自发参与的系列文化娱乐活动，为欢快的节日增添更多的喜庆气氛，这些庆祝活动带有浓厚的地方特色，民间俗称社火，亦称其闹社火或耍社火。</p>
+<p>&nbsp;</p>
+<img src="images/20210409211515.jpg" width="380" height="524"></div>
+</div>
+</section>
+<div class="qcfd"></div>
+<section>
+<h1 class="jiaoshifengcai"></h1>
+		<div class="picMarquee-left">
+			<div class="hd">
+				<a class="next"></a>
+				<a class="prev"></a>
+			</div>
+			<div class="bd">
+          
+				<ul class="picList">
+					<li>
+						<div class="pic"><img src="images/50.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/51.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/52.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/53.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/54.jpg" /></div>
+					</li>
+                     <li>
+						<div class="pic"><img src="images/55.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/56.jpg" /></div>
+					</li> <li>
+						<div class="pic"><img src="images/57.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/58.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/59.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/60.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/61.jpg" /></div>
+					</li>
+                    <li>
+						<div class="pic"><img src="images/62.jpg" /></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+		jQuery(".picMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:7,interTime:50});
+		</script>
+</section>
+<!--图e-->
+<!--页脚-->
+<div class="qcfd"></div>
+<footer>
+<div class="yejiao">
+<h1 class="copyright">网站版权所有&copy;兰州信息科技学院 信息工程学院 21计算机与技术13班<br>
+  制作者：李静 郎一卓 &nbsp;&nbsp;&nbsp; <br></h1>
+</div>
+</footer>
+	</audio>
+<audio autoplay="autoplay" controlsloop="loop" preload="auto" controls
+            	src="images/太阳升起的部落.mp3">
+      		你的浏览器版本太低，不支持audio标签
+	</audio>
+</html>
